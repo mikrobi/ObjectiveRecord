@@ -26,9 +26,7 @@
 
 #import "NSManagedObject+ActiveRecord.h"
 
-@interface ObjectiveRelation () <NSCopying> {
-    NSArray *_fetchedObjects;
-}
+@interface ObjectiveRelation () <NSCopying>
 
 @property (copy, nonatomic) NSArray *where;
 @property (copy, nonatomic) NSArray *order;
@@ -44,6 +42,8 @@
 @end
 
 @implementation ObjectiveRelation
+
+@synthesize fetchedObjects = _fetchedObjects;
 
 + (instancetype)relationWithManagedObjectClass:(Class)class {
     ObjectiveRelation *relation = [self new];
